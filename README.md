@@ -6,6 +6,8 @@ The CPU-friendly Anti-ASIC PoW Algorithm
 
 https://emscripten.org/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html#interacting-with-code-direct-function-calls
 
+https://developer.mozilla.org/en-US/docs/WebAssembly/C_to_Wasm
+
 ```
 cd build
 path/to/emcc \

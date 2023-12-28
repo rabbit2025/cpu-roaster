@@ -9,5 +9,5 @@
 build/pow_tester
 build/top_tester
 build/*.wasm
-build/*.js
-build/*.html
+# build/*.js
+# build/*.html

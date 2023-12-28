@@ -38,14 +38,16 @@ func main() {
 	instance, err := wasmer.NewInstance(module, importObject)
 	check(err)
 
-	start, err := instance.Exports.GetWasiStartFunction()
-	check(err)
-	start()
+	// start, err := instance.Exports.GetWasiStartFunction()
+	// check(err)
+	// start()
 
-	mainFn, err := instance.Exports.GetFunction("main")
+	fmt.Println("POW")
+	powFn, err := instance.Exports.GetFunction("cpu_roaster_pow")
 	check(err)
-	result, _ := mainFn()
-	fmt.Println(result)
+	result, err := powFn(0, 1, 2, 3, 4, 5, 6, 7, 1000000, 0, 1000)
+	check(err)
+	fmt.Println("result:", result)
 }
 
 func check(e error) {

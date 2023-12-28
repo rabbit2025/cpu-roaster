@@ -114,6 +114,9 @@ int64_t cpu_roaster_pow(uint32_t d0, uint32_t d1, uint32_t d2, uint32_t d3, uint
 	data[7*4+2] = uint8_t(d7 >>16);
 	data[7*4+3] = uint8_t(d7 >>24);
 
+#ifdef POW_TESTER
+		printf("POW_TESTER...\n");
+#endif
 	int64_t nonce=0, counter=0;
 	for(nonce = nonce_start; nonce < MAX_SAFE_INTEGER; nonce += nonce_step) {
 		uint64_t n = static_cast<uint64_t>(nonce);
@@ -171,7 +174,7 @@ int main() {
 #ifdef POW_TESTER
 int main() {
 	const uint64_t MAX = uint64_t(-1);
-	uint64_t difficulty = MAX/20;
+	uint64_t difficulty = MAX/2000;
 	int64_t nonce = cpu_roaster_pow(0, 1, 2, 3, 4, 5, 6, 7, difficulty, 0, 1000);
 	printf("nonce: %016llx difficulty: %016llx\n", nonce, difficulty);
 	return 0;

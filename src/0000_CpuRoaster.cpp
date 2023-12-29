@@ -170,7 +170,8 @@ int main() {
 int main() {
 	printf("POW_TESTER main() ...\n");
 	const uint64_t MAX = uint64_t(-1);
-	uint64_t difficulty = MAX/2000;
+	// uint64_t difficulty = MAX;
+	uint64_t difficulty = 10000;
 	int64_t nonce = cpu_roaster_pow(0, 1, 2, 3, 4, 5, 6, 7, difficulty, 0, 1000);
 	printf("nonce: %016llx difficulty: %016llx\n", nonce, difficulty);
 	return 0;

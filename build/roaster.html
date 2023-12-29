@@ -124,6 +124,7 @@ canvas.emscripten { border: 0px none; background-color: black; }
       <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex=-1></canvas>
     </div>
     <textarea id="output" rows="8"></textarea>
+    <button id="mybutton">Run myFunction</button>
 
     <script type='text/javascript'>
       var statusElement = document.getElementById('status');
@@ -195,6 +196,17 @@ canvas.emscripten { border: 0px none; background-color: black; }
           if (text) console.error('[post-exception status] ' + text);
         };
       };
+
+      document.getElementById("mybutton").addEventListener("click", () => {
+        console.log("check console");
+        const result = Module.ccall(
+          "cpu_roaster_pow", // name of C function
+          'number', // return type
+          ['number','number','number','number','number','number','number','number','number','number','number'], // argument types
+          [0, 1, 2, 3, 4, 5, 6, 7, 1000000, 0, 1000], // arguments
+        );
+        console.log(result);
+      });
     </script>
     <script async type="text/javascript" src="roaster.js"></script>
   </body>

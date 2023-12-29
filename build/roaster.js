@@ -5143,7 +5143,7 @@ function run() {
 
     if (Module['onRuntimeInitialized']) Module['onRuntimeInitialized']();
 
-    if (shouldRunNow) callMain();
+    // if (shouldRunNow) callMain();
 
     postRun();
   }

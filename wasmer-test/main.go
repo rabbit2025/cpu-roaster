@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	wasmBytes, err := ioutil.ReadFile("../build/roaster1.wasm")
+	wasmBytes, err := ioutil.ReadFile("/data/roaster1.wasm")
 	check(err)
 
 	store := wasmer.NewStore(wasmer.NewEngine())

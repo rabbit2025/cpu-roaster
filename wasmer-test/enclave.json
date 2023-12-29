@@ -5,5 +5,13 @@
     "heapSize": 512,
     "executableHeap": true,
     "productID": 1,
-    "securityVersion": 1
+    "securityVersion": 1,
+    "mounts": [
+      {
+        "source": "../build",
+        "target": "/data",
+        "type": "hostfs",
+        "readOnly": false
+      }
+    ]
 }

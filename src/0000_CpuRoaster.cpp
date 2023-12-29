@@ -168,6 +168,7 @@ int main() {
 
 #ifdef POW_TESTER
 int main() {
+	printf("POW_TESTER main() ...\n");
 	const uint64_t MAX = uint64_t(-1);
 	uint64_t difficulty = MAX/2000;
 	int64_t nonce = cpu_roaster_pow(0, 1, 2, 3, 4, 5, 6, 7, difficulty, 0, 1000);
